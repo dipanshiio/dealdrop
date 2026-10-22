@@ -60,13 +60,27 @@ export default function PriceChart({ productId }) {
           <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
           <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#9ca3af" />
           <YAxis tick={{ fontSize: 12 }} stroke="#9ca3af" />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "white",
-              border: "1px solid #e5e7eb",
-              borderRadius: "6px",
-            }}
-          />
+
+<Tooltip
+  cursor={{ stroke: "#FA5D19", strokeDasharray: "3 3" }}
+  contentStyle={{
+    backgroundColor: "#ffffff",
+    border: "1px solid #e5e7eb",
+    borderRadius: "6px",
+    padding: "8px 10px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+  }}
+  labelStyle={{
+    color: "#374151",
+    fontSize: "12px",
+    fontWeight: 600,
+  }}
+  itemStyle={{
+    color: "#FA5D19",
+    fontSize: "12px",
+  }}
+  formatter={(value) => [`price : ${value}`, ""]}
+/>
           <Line
             type="monotone"
             dataKey="price"
